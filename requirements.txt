@@ -1,0 +1,9 @@
+flask
+flask-cors
+mongomock
+pymongo
+pymupdf
+python-docx
+python-dotenv
+numpy
+requests
