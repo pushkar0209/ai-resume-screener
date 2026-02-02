@@ -2,7 +2,7 @@ flask
 flask-cors
 mongomock
 pymongo
-pymupdf
+pypdf
 python-docx
 python-dotenv
 numpy

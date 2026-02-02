@@ -1,4 +1,4 @@
-import fitz  # PyMuPDF
+
 import docx
 import os
 
@@ -24,9 +24,12 @@ class ResumeParser:
     def parse_pdf(file_path):
         text = ""
         try:
-            with fitz.open(file_path) as doc:
-                for page in doc:
-                    text += page.get_text()
+            from pypdf import PdfReader
+            reader = PdfReader(file_path)
+            for page in reader.pages:
+                extracted = page.extract_text()
+                if extracted:
+                    text += extracted + "\n"
         except Exception as e:
             print(f"Error parsing PDF {file_path}: {e}")
         return text
